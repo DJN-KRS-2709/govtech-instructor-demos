@@ -1,0 +1,8 @@
+# Made up for a live demo. Synthetic data, no real people, no real records.
+id,owner_email,subject,status
+E-3001,officer.a@example.test,Bin not collected,open
+E-3002,officer.a@example.test,Broken bench in the park,open
+E-3003,officer.b@example.test,Lift out of service,open
+E-3004,officer.b@example.test,Pothole near the bus stop,open
+E-3005,officer.a@example.test,Overgrown grass verge,open
+E-3006,officer.b@example.test,Blocked drain after rain,open

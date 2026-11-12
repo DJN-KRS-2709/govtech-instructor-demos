@@ -1,0 +1,7 @@
+# Made up for a live demo. Synthetic data, no real people, no real records.
+id,subject,category,urgency
+E-2041,Fallen tree blocking a footpath,Roads,urgent
+E-2042,Streetlight flickering on my block,Lighting,routine
+E-2043,Question about a parking fine,Parking,routine
+E-2044,How do I renew a permit?,Permits,routine
+E-2045,Noise from a renovation next door,Noise,routine

@@ -1,0 +1,93 @@
+<!doctype html>
+<!-- Made up data only. Preview of the GovTech instructor demos run sheet. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GovTech instructor demos · run sheet (made up data)</title>
+<style>
+body{font-family:system-ui,Helvetica,Arial,sans-serif;max-width:920px;margin:0 auto;padding:40px 24px 80px;color:#111;line-height:1.55}
+h1{font-size:34px;letter-spacing:-.02em} h2{margin-top:44px;border-top:1px solid #ddd;padding-top:20px} h3{margin-top:28px}
+pre{background:#f4f5f8;border:1px solid #e3e5ea;padding:12px 14px;white-space:pre-wrap;font-size:13.5px}
+code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.88em} a{color:#2b54e8}
+.badge{display:inline-block;font:600 11px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;background:#fff4d6;color:#7a4b00;padding:4px 8px;border-radius:4px}
+section{border:1px solid #e3e5ea;padding:4px 16px 8px;margin:12px 0}
+</style></head><body>
+<p><span class="badge">Made up data</span></p>
+<h1>GovTech instructor demos · run sheet (made up data)</h1>
+<p>Every instructor demo in the 12 GovTech Curriculum decks, ready to run live in the Claude desktop app, Code tab. All data is made up. Scenarios: A ServiceSG, B ICA, C MOE.</p>
+<h2>How to run a demo</h2>
+<ol>
+<li>In the Claude desktop app, open the Code tab and select the demo's folder (for example <code>day4-measure/c12-read-product-data</code>) as the folder Claude works in.</li>
+<li>Open the demo's <code>prompt.md</code> and paste the prompts in order. <code>expected.md</code> has the answer it should land on and one fallback.</li>
+<li>To reset after a run, ask Claude in the Code tab: <code>restore this demo folder to the last commit</code>.</li>
+<li>Five demos also have a HyperFrames video on the slide (C4, C5 twice, C7, C8). If a live run stalls, play the video.</li>
+</ol>
+<p>No Terminal steps. The Claude desktop app and the browser are all you need.</p>
+<h2>Day 2 · Validate</h2>
+<h3>C4 · The Triple-Threat Build · 4 min · <a href="#day2-validate-c4-triple-threat-build"><code>day2-validate/c4-triple-threat-build/</code></a></h3>
+<p>Slide: "The Triple-Threat Build" (Instructor-Led Demo, Scenario A). Also on video: <code>c4-triple-threat-build.mp4</code>.</p>
+<pre><code>Build a dashboard so officers can see their own reopened enquiries by category. Use made-up sample data. Save it in day2-validate/prototype/.
+</code></pre>
+<p>Then: <code>Which of the three theories in GROUP.md does this dashboard test?</code></p>
+<p>Lands on: it only built the loudest guess.</p>
+<h3>C5 · Demo · Context Injection · 5 min (agenda 4) · <a href="#day2-validate-c5-context-injection"><code>day2-validate/c5-context-injection/</code></a></h3>
+<p>Slide: "Demo · Context Injection" (Instructor-Led Demo · 5 Minutes). Also on video: <code>c5-context-injection.mp4</code>. Attach <code>day2-validate/validation-brief.md</code> and <code>day2-validate/data/sample-enquiries.csv</code> first.</p>
+<pre><code>Use the brief and the CSV. Rebuild the inbox with the real enquiries and a draft reply each, then add the partner check from the brief.
+</code></pre>
+<p>Then: <code>Read day2-validate/data/partner-check-results.csv. Against the kill switch in day2-validate/validation-brief.md, does it fire?</code></p>
+<p>Lands on: 2 of 5 partners missed the urgent enquiry, so the kill switch fires.</p>
+<h3>C5 · Demo · The Precision Prompt Chain · 6 min (agenda 4) · <a href="#day2-validate-c5-precision-prompt-chain"><code>day2-validate/c5-precision-prompt-chain/</code></a></h3>
+<p>Slide: "Demo · The Precision Prompt Chain" (Instructor-Led Demo · 6 Minutes). Also on video: <code>c5-precision-prompt-chain.mp4</code>.</p>
+<pre><code>Prompt 1, Expand: add an enquiry detail view and a draft reply view, in that order. Keep the list as the anchor.
+</code></pre>
+<pre><code>Prompt 2, Behavior: add loading, empty and error states with the exact text in PROMPTS.md. Drafts are never sent automatically.
+</code></pre>
+<pre><code>Prompt 3, Refine: audit the list screen for its 3 biggest visual gaps. Then fix only the top two.
+</code></pre>
+<p>Lands on: 3 screens become 5, states added, the audit names the header, the disabled-looking button and the row spacing, and fixes two.</p>
+<h3>C6 · Exterior vs Hood · inside the 4 min slide · <a href="#day2-validate-c6-exterior-vs-hood"><code>day2-validate/c6-exterior-vs-hood/</code></a></h3>
+<p>Slide: "Exterior vs hood" (Lecture; the live demo is in the speaker note, Scenario B).</p>
+<pre><code>Open day2-validate/prototype/index.html. List what's missing before this could go to production: data handling, error paths, access rules, tests, and how the AI step is called.
+</code></pre>
+<p>Lands on: a long list against a screen that looks finished.</p>
+<h2>Day 3 · Build</h2>
+<h3>C7 · Instructor Demo · Run Your Agent · 5 min of the 15 min lab · <a href="#day3-build-c7-run-your-agent"><code>day3-build/c7-run-your-agent/</code></a></h3>
+<p>Slides: "Instructor Demo · Run Your Agent" and "Run Your Agent in the Code tab". Also on video: <code>c7-run-your-agent.mp4</code>. Attach <code>day3-build/agent-spec.md</code> and <code>day3-build/agent-control-panel.md</code> first.</p>
+<pre><code>Create day3-build/CLAUDE.md from agent-spec.md and agent-control-panel.md
+</code></pre>
+<pre><code>add 3 made-up inputs to day3-build/agent-run-log.md: one to complete, one to escalate, one to refuse
+</code></pre>
+<pre><code>Run each of the 3 inputs with day3-build/CLAUDE.md. Show what you would do.
+</code></pre>
+<pre><code>Note where it broke a rule in day3-build/agent-run-log.md.
+</code></pre>
+<pre><code>Save day3-build/agent-run-log.md and day3-build/CLAUDE.md on main.
+</code></pre>
+<p>Lands on: the complete case breaks rule 4 (no policy page named).</p>
+<h3>C8 · Instructor Demo · Connected to Secured · 8 min (agenda 12) · <a href="#day3-build-c8-connected-to-secured"><code>day3-build/c8-connected-to-secured/</code></a></h3>
+<p>Slide: "Instructor Demo · Connected to Secured" (Demo · 8 min). Also on video: <code>c8-connected-to-secured.mp4</code>.</p>
+<pre><code>Add a data schema to sample-app/ for enquiries. Use synthetic records only.
+</code></pre>
+<pre><code>Add a simple sign-in so the app knows who is asking. Test accounts only.
+</code></pre>
+<pre><code>Add row level access rules: each user sees only their own records.
+</code></pre>
+<pre><code>Run a security check, then deploy to a local test environment.
+</code></pre>
+<p>Lands on: each officer sees only their own 3 made-up records; the check warns sign-in is test accounts only.</p>
+<h2>Day 4 · Measure and decide</h2>
+<h3>C12 · Read Your Product Data · 2 min demo before the 7 min lab · <a href="#day4-measure-c12-read-product-data"><code>day4-measure/c12-read-product-data/</code></a></h3>
+<p>Slide: "Lab · Read Your Product Data" ("Instructor demo, 2 minutes").</p>
+<pre><code>read day4-measure/data/synthetic-usage.csv and name the one biggest signal against day4-measure/metrics-plan.md
+</code></pre>
+<p>Lands on: officers rewrite most drafts on one enquiry type, Permits (78 of 100), past the stop line in the metrics plan.</p>
+<h2>No demo on Day 1</h2>
+<p>Curriculum 1 to 3 have no instructor demo slide.</p>
+<h2>Files</h2>
+<ul>
+<li><code>demos/INVENTORY.md</code>: every demo with module, slide, minutes, what the instructor does, prompts, files and the outcome.</li>
+<li><code>tools/seed.py</code>: writes all made-up data, deterministic. <code>tools/verify.py</code>: checks each expected signal is really in the data. Maintainer steps, not part of the live run.</li>
+<li><code>preview/index.html</code>: this run sheet in the browser, with links to every demo file.</li>
+</ul>
+<h2>Demo files</h2>
+<ul><li><a href="../README.md">README.md</a></li><li><a href="../CLAUDE.md">CLAUDE.md</a></li><li><a href="../demos/INVENTORY.md">demos/INVENTORY.md</a></li><li><a href="../tools/seed.py">tools/seed.py</a></li><li><a href="../tools/verify.py">tools/verify.py</a></li></ul>
+<section id="day2-validate-c4-triple-threat-build"><h3><code>day2-validate/c4-triple-threat-build/</code></h3><ul><li><a href="../day2-validate/c4-triple-threat-build/GROUP.md">GROUP.md</a></li><li><a href="../day2-validate/c4-triple-threat-build/day2-validate/prototype/README.md">day2-validate/prototype/README.md</a></li><li><a href="../day2-validate/c4-triple-threat-build/expected.md">expected.md</a></li><li><a href="../day2-validate/c4-triple-threat-build/prompt.md">prompt.md</a></li></ul></section><section id="day2-validate-c5-context-injection"><h3><code>day2-validate/c5-context-injection/</code></h3><ul><li><a href="../day2-validate/c5-context-injection/day2-validate/data/officer-quotes.md">day2-validate/data/officer-quotes.md</a></li><li><a href="../day2-validate/c5-context-injection/day2-validate/data/partner-check-results.csv">day2-validate/data/partner-check-results.csv</a></li><li><a href="../day2-validate/c5-context-injection/day2-validate/data/sample-enquiries.csv">day2-validate/data/sample-enquiries.csv</a></li><li><a href="../day2-validate/c5-context-injection/day2-validate/prototype/draft.html">day2-validate/prototype/draft.html</a></li><li><a href="../day2-validate/c5-context-injection/day2-validate/prototype/index.html">day2-validate/prototype/index.html</a></li><li><a href="../day2-validate/c5-context-injection/day2-validate/prototype/result.html">day2-validate/prototype/result.html</a></li><li><a href="../day2-validate/c5-context-injection/day2-validate/validation-brief.md">day2-validate/validation-brief.md</a></li><li><a href="../day2-validate/c5-context-injection/expected.md">expected.md</a></li><li><a href="../day2-validate/c5-context-injection/prompt.md">prompt.md</a></li></ul></section><section id="day2-validate-c5-precision-prompt-chain"><h3><code>day2-validate/c5-precision-prompt-chain/</code></h3><ul><li><a href="../day2-validate/c5-precision-prompt-chain/day2-validate/PROMPTS.md">day2-validate/PROMPTS.md</a></li><li><a href="../day2-validate/c5-precision-prompt-chain/day2-validate/data/sample-enquiries.csv">day2-validate/data/sample-enquiries.csv</a></li><li><a href="../day2-validate/c5-precision-prompt-chain/day2-validate/prototype/dashboard.html">day2-validate/prototype/dashboard.html</a></li><li><a href="../day2-validate/c5-precision-prompt-chain/day2-validate/prototype/index.html">day2-validate/prototype/index.html</a></li><li><a href="../day2-validate/c5-precision-prompt-chain/day2-validate/prototype/partner-check.html">day2-validate/prototype/partner-check.html</a></li><li><a href="../day2-validate/c5-precision-prompt-chain/expected.md">expected.md</a></li><li><a href="../day2-validate/c5-precision-prompt-chain/prompt.md">prompt.md</a></li></ul></section><section id="day2-validate-c6-exterior-vs-hood"><h3><code>day2-validate/c6-exterior-vs-hood/</code></h3><ul><li><a href="../day2-validate/c6-exterior-vs-hood/day2-validate/prototype/README.md">day2-validate/prototype/README.md</a></li><li><a href="../day2-validate/c6-exterior-vs-hood/day2-validate/prototype/index.html">day2-validate/prototype/index.html</a></li><li><a href="../day2-validate/c6-exterior-vs-hood/expected.md">expected.md</a></li><li><a href="../day2-validate/c6-exterior-vs-hood/prompt.md">prompt.md</a></li></ul></section><section id="day3-build-c7-run-your-agent"><h3><code>day3-build/c7-run-your-agent/</code></h3><ul><li><a href="../day3-build/c7-run-your-agent/day3-build/agent-control-panel.md">day3-build/agent-control-panel.md</a></li><li><a href="../day3-build/c7-run-your-agent/day3-build/agent-run-log.md">day3-build/agent-run-log.md</a></li><li><a href="../day3-build/c7-run-your-agent/day3-build/agent-spec.md">day3-build/agent-spec.md</a></li><li><a href="../day3-build/c7-run-your-agent/expected.md">expected.md</a></li><li><a href="../day3-build/c7-run-your-agent/prompt.md">prompt.md</a></li></ul></section><section id="day3-build-c8-connected-to-secured"><h3><code>day3-build/c8-connected-to-secured/</code></h3><ul><li><a href="../day3-build/c8-connected-to-secured/expected.md">expected.md</a></li><li><a href="../day3-build/c8-connected-to-secured/prompt.md">prompt.md</a></li><li><a href="../day3-build/c8-connected-to-secured/sample-app/README.md">sample-app/README.md</a></li><li><a href="../day3-build/c8-connected-to-secured/sample-app/data/enquiries.csv">sample-app/data/enquiries.csv</a></li><li><a href="../day3-build/c8-connected-to-secured/sample-app/index.html">sample-app/index.html</a></li></ul></section><section id="day4-measure-c12-read-product-data"><h3><code>day4-measure/c12-read-product-data/</code></h3><ul><li><a href="../day4-measure/c12-read-product-data/day4-measure/data/synthetic-usage.csv">day4-measure/data/synthetic-usage.csv</a></li><li><a href="../day4-measure/c12-read-product-data/day4-measure/iteration.md">day4-measure/iteration.md</a></li><li><a href="../day4-measure/c12-read-product-data/day4-measure/metrics-plan.md">day4-measure/metrics-plan.md</a></li><li><a href="../day4-measure/c12-read-product-data/expected.md">expected.md</a></li><li><a href="../day4-measure/c12-read-product-data/prompt.md">prompt.md</a></li></ul></section>
+</body></html>
