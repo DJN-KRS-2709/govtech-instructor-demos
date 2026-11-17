@@ -1,24 +1,69 @@
 <!doctype html>
 <!-- Made up for a live demo. Synthetic data, no real people, no real records. -->
-<html lang="en"><head><meta charset="utf-8"><title>Enquiries (made up)</title>
+<html lang="en"><head><meta charset="utf-8"><title>Officer dashboard (made up)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{font-family:system-ui,Helvetica,Arial,sans-serif;margin:0;background:#f4f5f8;color:#111}
-header{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:#fff;border-bottom:1px solid #e3e5ea}
-.badge{font:600 11px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;background:#fff4d6;color:#7a4b00;padding:4px 8px;border-radius:4px}
-main{max-width:880px;margin:24px auto;padding:0 20px}
-.card{background:#fff;border:1px solid #e3e5ea;border-radius:10px;padding:16px 18px;margin-bottom:12px}
-nav a{margin-right:14px;color:#3046c8;text-decoration:none;font-weight:600}
-h1{font-size:14px;font-weight:600;margin:0 0 6px}.btn{background:#3046c8;color:#fff;border:0;border-radius:6px;padding:8px 14px;opacity:.45}.row{padding:2px 8px;border-bottom:1px solid #eee;display:flex;gap:12px}
-</style></head><body>
-<header><div><strong>Enquiries</strong><div style="font-size:13px;color:#666">Scenario A · officer view</div></div><span class="badge">Made up</span></header>
-<main>
-<nav><a href="index.html">Enquiry list</a><a href="partner-check.html">Partner check</a><a href="dashboard.html">PM dashboard</a></nav>
-<div class="card"><h1>Open enquiries</h1>
-<div class="row"><span>E-2041</span><span>Fallen tree blocking a footpath</span><span style="margin-left:auto">Roads</span></div>
-<div class="row"><span>E-2042</span><span>Streetlight flickering on my block</span><span style="margin-left:auto">Lighting</span></div>
-<div class="row"><span>E-2043</span><span>Question about a parking fine</span><span style="margin-left:auto">Parking</span></div>
-<div class="row"><span>E-2044</span><span>How do I renew a permit?</span><span style="margin-left:auto">Permits</span></div>
-<div class="row"><span>E-2045</span><span>Noise from a renovation next door</span><span style="margin-left:auto">Noise</span></div>
-<p><button class="btn">Open enquiry</button></p></div>
-</main></body></html>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,Helvetica,Arial,sans-serif;background:#f4f5f7;color:#16181d;min-height:100vh}
+a{color:#3046c8;text-decoration:none;font-weight:600}
+.wrap{max-width:1120px;margin:0 auto;padding:22px 24px 40px}
+.dh{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.logo{width:38px;height:38px;border-radius:9px;background:#5b5bf6;flex:none}
+.tt{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.st{font-size:14px;color:#6b6f78;margin-top:2px}
+.sb{margin-left:auto;font:600 11px ui-monospace,SFMono-Regular,monospace;color:#9a6a00;background:#fdf2d0;padding:5px 10px;border-radius:5px;letter-spacing:.06em;text-transform:uppercase}
+nav{display:flex;gap:16px;margin:0 0 16px;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
+.card{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid #e3e4e8}
+.k{font-size:12px;font-weight:700;letter-spacing:.08em;color:#5d616b;text-transform:uppercase}
+.v{font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.25;margin-top:2px}
+.v.sm{font-size:22px;line-height:1.45}
+.s{font-size:13px;color:#6b6f78;margin-top:2px}
+.red{color:#d03a3a}.org{color:#d9772b}
+.lower{display:grid;grid-template-columns:1.55fr 1fr;gap:12px}
+.panel{background:#fff;border-radius:10px;border:1px solid #e3e4e8;padding:14px 16px 16px;min-height:280px;display:flex;flex-direction:column}
+.bars{display:flex;align-items:flex-end;gap:22px;height:200px;padding:28px 6px 0}
+.bar{flex:1;background:linear-gradient(180deg,#6d5cf6,#4f46e5);border-radius:4px 4px 0 0;position:relative;min-height:8px}
+.bar .bv{position:absolute;top:-24px;left:0;right:0;text-align:center;font-weight:700;font-size:16px;color:#333}
+.bar.sig{background:linear-gradient(180deg,#f6a35c,#e2742c);box-shadow:0 0 0 3px rgba(240,150,90,.35)}
+.sigtag{position:absolute;top:-52px;left:50%;transform:translateX(-50%);font:700 11px ui-monospace,SFMono-Regular,monospace;background:#e2742c;color:#fff;padding:3px 8px;border-radius:4px;letter-spacing:.06em;white-space:nowrap}
+.blabels{display:flex;gap:22px;margin-top:8px;padding:0 6px}
+.blabels span{flex:1;text-align:center;font-size:13px;color:#555}
+.li{display:flex;align-items:center;gap:12px;font-size:15px;min-height:40px;border-bottom:1px solid #eee}
+.li:last-child{border-bottom:0}
+.li b{font:600 13px ui-monospace,SFMono-Regular,monospace;width:70px}
+.pt{margin-left:auto;font:700 11px ui-monospace,SFMono-Regular,monospace;padding:3px 8px;border-radius:4px;letter-spacing:.04em;white-space:nowrap}
+.pt.r{background:#fde2e2;color:#c03030}.pt.o{background:#fde9d6;color:#b85e17}.pt.g{background:#dcfce7;color:#15803d}
+.lab{font-size:11px;font-weight:700;letter-spacing:.1em;color:#7a7e88;text-transform:uppercase;margin-top:10px}
+.tx{font-size:15px;line-height:1.4;color:#1d2027;margin-top:3px}
+.sigline{background:#fff4ea;border:1.5px solid #f2b583;border-radius:8px;padding:7px 10px}
+.btn{background:#3046c8;color:#fff;border:0;border-radius:8px;padding:10px 14px;font-weight:600;font-size:14px;cursor:pointer}
+#ai-out{margin-top:10px;min-height:24px;font-size:15px;color:#1d2027}
+.kill-line{font-size:20px;font-weight:700;color:#15803d}
+.count{font-size:44px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:6px 0}
+@media(max-width:860px){.cards,.lower{grid-template-columns:1fr 1fr}.wrap{padding:16px}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="dh"><div class="logo"></div><div><div class="tt">Officer dashboard</div><div class="st">OFF-07 &middot; last 30 days &middot; data/sample-officer-metrics.csv</div></div><span class="sb">Synthetic data, made up</span></div>
+<div class="cards">
+<div class="card"><div class="k">My closed</div><div class="v">72</div><div class="s">last 30 days</div></div>
+<div class="card"><div class="k">My reopen rate</div><div class="v red">29%</div><div class="s">team 24%</div></div>
+<div class="card"><div class="k">Top reopen reason</div><div class="v sm org">Missed next step</div><div class="s">16 of 21 reopens</div></div>
+<div class="card"><div class="k">Success signal</div><div class="v">4 of 5</div><div class="s">target: partners name a change</div></div>
+</div>
+<div class="lower">
+<div class="panel"><div class="k">My reopened by category</div><div class="bars"><div class="bar" style="height:68%"><span class="bv">7</span></div><div class="bar" style="height:20%"><span class="bv">2</span></div><div class="bar" style="height:10%"><span class="bv">1</span></div><div class="bar" style="height:20%"><span class="bv">2</span></div><div class="bar sig" style="height:88%"><span class="bv">9</span><span class="sigtag">SIGNAL</span></div></div><div class="blabels"><span>Parking</span><span>Permits</span><span>Drains</span><span>Noise</span><span>Payments</span></div></div>
+<div class="panel"><div class="k">Testing &middot; from build-log.md</div>
+<div class="lab">Riskiest assumption</div><div class="tx">Officers who see their own reopens will change how they reply.</div>
+<div class="lab">Signal</div><div class="tx sigline">16 of 21 of my reopens missed the next step. Most are in Payments.</div>
+<div class="lab">Kill switch</div><div class="tx">Fewer than 3 of 5 partners name a change: stop and test the templates theory.</div>
+</div>
+</div>
+</div>
+<script src="data.js"></script>
+<!-- Numbers copied from data/sample-officer-metrics.csv. No validation, no error handling. -->
+
+
+
+</body></html>

@@ -4,15 +4,15 @@ Read from the 12 GovTech Curriculum instructor decks (`Curriculum N - Slides.htm
 
 | Day | Module | Slide (deck index) | Demo | Minutes | Folder |
 |---|---|---|---|---|---|
-| 2 | C4 | The Triple-Threat Build (#4) | Build the loudest guess, then ask if it helps | 4 | `day2-validate/c4-triple-threat-build/` |
-| 2 | C5 | Demo · Context Injection (#2) | Shiny shell, then brief + data, partner check, kill switch | 5 (agenda 4) | `day2-validate/c5-context-injection/` |
-| 2 | C5 | Demo · The Precision Prompt Chain (#7) | Expand, Behavior, Refine on one build | 6 (agenda 4) | `day2-validate/c5-precision-prompt-chain/` |
-| 2 | C6 | Exterior vs hood (#4) | Ask Claude what's missing for production | inside the 4 min slide | `day2-validate/c6-exterior-vs-hood/` |
+| 2 | C4 | The Triple-Threat Build | Build the loudest guess, then ask if it helps | 4 | `day2-validate/c4-triple-threat-build/` |
+| 2 | C5 | Demo · Context Injection | Module 4 dashboard, one prompt, assumption in build-log.md, made-up CSV | 3 | `day2-validate/c5-context-injection/` |
+| 2 | C5 | Demo · Your Prompt Chain | Expand, Behavior, Refine on the same dashboard | 3 (tag 6) | `day2-validate/c5-precision-prompt-chain/` |
+| 2 | C6 | Demo vs code | Ask Claude what's missing for production on the end-of-M5 dashboard | inside the 8 min block | `day2-validate/c6-demo-vs-code/` |
 | 3 | C7 | Instructor Demo · Run Your Agent (#14) and Run Your Agent in the Code tab (#15) | Instruction file, 3 inputs, run, log the break, save on main | 5 of the 15 min lab | `day3-build/c7-run-your-agent/` |
 | 3 | C8 | Instructor Demo · Connected to Secured (#12) | Schema, sign-in, access rules, check and deploy | 8 (agenda 12) | `day3-build/c8-connected-to-secured/` |
 | 4 | C12 | Lab · Read Your Product Data (#11) | Read a seeded dataset, name one signal | 2 (before the 7 min lab) | `day4-measure/c12-read-product-data/` |
 
-HyperFrames videos on the slide: C4, C5 Context Injection, C5 Precision Prompt Chain, C7 (#14), C8. All 5 can also run live from this repo.
+HyperFrames videos on the slide: C4, C5 Context Injection, C5 Your Prompt Chain, C7, C8. All 5 can also run live from this repo. Day 2 is one Scenario A thread.
 
 ## Details
 
@@ -24,24 +24,25 @@ HyperFrames videos on the slide: C4, C5 Context Injection, C5 Precision Prompt C
 - Outcome: it built only the Chief Executive's guess; neither other theory is tested.
 
 ### C5 · Demo · Context Injection
-- Tag: Instructor-Led Demo · 5 Minutes. Note: "Planned: 5 min (agenda: 4 min)".
-- Instructor: opens a polished inbox that tests nothing, feeds it context, rebuilds, runs a partner check.
-- Prompt (video): `Use the brief and the CSV. Rebuild the inbox with the real enquiries and a draft reply each, then add the partner check from the brief.` Added for the live run: read `day2-validate/data/partner-check-results.csv` against the kill switch.
-- Files: `day2-validate/validation-brief.md`, `day2-validate/data/sample-enquiries.csv`, `day2-validate/data/partner-check-results.csv`, `day2-validate/data/officer-quotes.md` (optional), `day2-validate/prototype/`.
-- Outcome: 2 of 5 partners miss the urgent enquiry (E-2041), so the kill switch fires.
+- Tag: Instructor-Led Demo. Agenda: 3 min. Scenario A, made up.
+- Instructor: opens the Module 4 officer dashboard (it looks finished and tests nothing), pastes one lab prompt. Claude plans, writes the assumption into `day2-validate/build-log.md`, makes a made-up CSV, wires the dashboard, and merges on main.
+- Prompt (video): `Read one-pager.md and day2-validate/build-log.md. Plan first. Then add my riskiest assumption: officers who see their own reopened enquiries will change how they reply, its risk type, a kill switch and a success signal to day2-validate/build-log.md, update day2-validate/prototype/ to test it using made-up sample data labelled as made up, and save both on main (open the pull request and merge it).`
+- Files: `one-pager.md`, `day2-validate/build-log.md` (Module 4 entry only), `day2-validate/prototype/` (Module 4 dashboard).
+- Outcome: same dashboard, now testing the assumption, with OFF-07's made-up metrics and a marked Payments signal (29% reopen rate, top reason missed next step).
 
-### C5 · Demo · The Precision Prompt Chain
-- Tag: Instructor-Led Demo · 6 Minutes. Note: "Planned: 6 min (agenda: 4 min)".
-- Instructor: runs three prompts in order on one build without rebuilding.
-- Prompts (video): Prompt 1 Expand, Prompt 2 Behavior, Prompt 3 Refine (full text in `prompt.md`).
-- Files: `day2-validate/prototype/` (3 screens seeded), `day2-validate/PROMPTS.md` (state text), `day2-validate/data/sample-enquiries.csv`.
-- Outcome: 5 screens, loading, empty and error states, never-send line, audit of 3 seeded visual gaps with 2 fixed, prompts saved to PROMPTS.md.
+### C5 · Demo · Your Prompt Chain
+- Tag: Instructor-Led Demo · 6 Minutes. Agenda: 3 min. Scenario A, made up.
+- Instructor: runs three prompts in order on the Context Injection result, without rebuilding the dashboard.
+- Prompts (video): Prompt 1 Expand, Prompt 2 Behavior, Prompt 3 Refine, then save to PROMPTS.md (full text in `prompt.md`).
+- Files: `one-pager.md`, `day2-validate/build-log.md` (assumption already logged), `day2-validate/data/sample-officer-metrics.csv`, `day2-validate/prototype/` (dashboard only; no partner check yet), stub `day2-validate/PROMPTS.md`.
+- Outcome: partner check added, 5 made-up answers counted (3 of 5 name a change, kill switch holds), one scoped fix on `.kill-line`, prompts and toy-or-tool: tool saved on main.
 
-### C6 · Exterior vs hood
-- Tag: Lecture. Note: "Planned: 4 min (12 min with the next two slides)" and "Let me show you on one prototype. I'll open the screen in Claude Code, and then ask Claude to list what's missing for production."
+### C6 · Demo vs code
+- Tag: Lecture. The live demo is in the speaker note. Part of the 8 min Module 6 block. Scenario A, made up.
+- Instructor: in the Claude desktop app, Code tab, selects `day2-validate/c6-demo-vs-code`, opens the end-of-Module-5 officer dashboard, and asks what is missing for production.
 - Prompt: none on the slide; `prompt.md` turns the note into one prompt.
-- Files: `day2-validate/prototype/index.html` (Scenario B, ICA, polished with a thin hood).
-- Outcome: gaps in data handling, error paths, access rules, tests and the AI step.
+- Files: `day2-validate/prototype/index.html` (Scenario A dashboard, polished with a thin hood), `partner-check.html`, `styles.css`, `data.js`, `data/sample-officer-metrics.csv`.
+- Outcome: gaps in data handling, error paths, access rules, tests and the AI step, against a screen that looks finished.
 
 ### C7 · Instructor Demo · Run Your Agent
 - #14 tag: Instructor Demo, no Planned line. #15 body: "Instructor demo 5 minutes, then 10 minutes on your own agent." #15 note: "Planned: 15 min (agenda: 10 min)".
@@ -64,14 +65,12 @@ HyperFrames videos on the slide: C4, C5 Context Injection, C5 Precision Prompt C
 - Outcome: officers rewrite most drafts on one enquiry type (Permits, 78 of 100), past the stop line.
 
 ## Slide and speaker note disagreements
-1. C5 Context Injection: the tag says 5 Minutes and the note says 5 min (agenda 4), but the slide's "Next" card says "What you'll have in 7 min" and the note says "In about seven minutes".
-2. C5 Context Injection: the slide and note promise "real user quotes" and "domain metrics"; the video only uses a brief and a CSV. The note's example is ICA (parents renewing for a child, 17% come back); the video is Scenario A, ServiceSG.
-3. C5 Precision Prompt Chain: 6 min on the tag and note, 4 min in the agenda.
-4. C7: #14 and the video run 3 inputs and find a rule 4 break on the complete case; the #15 note says the demo runs "one made-up example that should escalate. Watch where it stops."
-5. C7: the #15 body and Instructor Guide give 5 min of demo; #14 has no Planned line and the note says "under a minute" (the video).
-6. C8: 8 min on the tag and note, 12 min in the agenda and Instructor Guide.
-7. C12: the subtitle says "Ten minutes on a seeded synthetic dataset"; the timer is 7 min and the note gives 2 + 7 = 9.
-8. C6: the note describes a live demo, but the slide is tagged Lecture and the Instructor Guide lists no demo for C6.
+1. C5 Your Prompt Chain: 6 min on the tag, 3 min in the Module 5 agenda.
+2. C7: the Run Your Agent slides and the video run 3 inputs and find a rule 4 break on the complete case; one speaker note says the demo runs "one made-up example that should escalate. Watch where it stops."
+3. C7: the lab body and Instructor Guide give 5 min of demo; one note says "under a minute" (the video).
+4. C8: 8 min on the tag and note, 12 min in the agenda and Instructor Guide.
+5. C12: the subtitle says "Ten minutes on a seeded synthetic dataset"; the timer is 7 min and the note gives 2 + 7 = 9.
+6. C6: the note describes a live demo, but the slide is tagged Lecture.
 
 ## Looked at, not counted
 - C9 "Role Clarity and Team Shape": instructor led, takes learners' scenarios as live examples; no Code tab demo.

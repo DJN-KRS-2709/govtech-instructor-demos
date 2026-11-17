@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Made up for a live demo. Synthetic data, no real people, no real records. -->
+<html lang="en"><head><meta charset="utf-8"><title>Officer dashboard (made up)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<div class="wrap">
+<div class="dh"><div class="logo"></div><div><div class="tt">Officer dashboard</div><div class="st">OFF-07 &middot; last 30 days &middot; data/sample-officer-metrics.csv</div></div><span class="sb">Synthetic data, made up</span></div>
+<nav><a href="index.html">Dashboard</a><a href="partner-check.html">Partner check</a></nav>
+<div class="cards">
+<div class="card"><div class="k">My closed</div><div class="v">72</div><div class="s">last 30 days</div></div>
+<div class="card"><div class="k">My reopen rate</div><div class="v red">29%</div><div class="s">team 24%</div></div>
+<div class="card"><div class="k">Top reopen reason</div><div class="v sm org">Missed next step</div><div class="s">16 of 21 reopens</div></div>
+<div class="card"><div class="k">Success signal</div><div class="v">4 of 5</div><div class="s">target: partners name a change</div></div>
+</div>
+<div class="lower">
+<div class="panel"><div class="k">My reopened by category</div><div class="bars"><div class="bar" style="height:68%"><span class="bv">7</span></div><div class="bar" style="height:20%"><span class="bv">2</span></div><div class="bar" style="height:10%"><span class="bv">1</span></div><div class="bar" style="height:20%"><span class="bv">2</span></div><div class="bar sig" style="height:88%"><span class="bv">9</span><span class="sigtag">SIGNAL</span></div></div><div class="blabels"><span>Parking</span><span>Permits</span><span>Drains</span><span>Noise</span><span>Payments</span></div></div>
+<div class="panel"><div class="k">Testing &middot; from build-log.md</div>
+<div class="lab">Riskiest assumption</div><div class="tx">Officers who see their own reopens will change how they reply.</div>
+<div class="lab">Signal</div><div class="tx sigline">16 of 21 of my reopens missed the next step. Most are in Payments.</div>
+<div class="lab">Kill switch</div><div class="tx">Fewer than 3 of 5 partners name a change: stop and test the templates theory.</div>
+
+<div class="lab">Suggest a reply change</div>
+<div class="tx">A stubbed AI step on the Payments signal. Looks finished. The hood is thin.</div>
+<p style="margin-top:10px"><button class="btn" type="button" onclick="suggest()">Suggest a reply change</button></p>
+<div id="ai-out">Your suggestion appears here.</div>
+</div>
+</div>
+</div>
+<script src="data.js"></script>
+<!-- Numbers copied from data/sample-officer-metrics.csv. No validation, no error handling. -->
+<script>
+// Thin hood: no error handling, no access rules, no tests, no logging.
+function callModel(reason){ return "Most reopens missed the next step. Add the next step to the reply."; }  // AI step: fixed string, no real call, no timeout, no fallback
+function suggest(){
+  var last = "OFF-07:Missed next step";
+  localStorage.setItem("lastSuggestion", last);                     // the officer id and reason sit in the browser
+  document.getElementById("ai-out").textContent = callModel(last);
+}
+</script>
+
+
+
+</body></html>

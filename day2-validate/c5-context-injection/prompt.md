@@ -1,19 +1,12 @@
 # Prompt · C5 Demo · Context Injection (made up data)
 
-Source: the prompt typed on screen in the C5 HyperFrames demo (`c5-context-injection.mp4`). The slide shows no prompt.
-The polished inbox from the video's first prompt ("Build a 3-screen enquiry inbox for officers: a list, a draft reply and a result screen.") is already seeded in day2-validate/prototype/, so you start from the shiny shell.
+Source: the single lab prompt typed on screen in the C5 Context Injection video (`c5-context-injection.mp4`). The slide shows no prompt.
+The Module 4 officer dashboard is already seeded in day2-validate/prototype/. It looks finished and tests nothing. one-pager.md and day2-validate/build-log.md are in the folder, so you can paste the prompt as written.
 
-## Paste this (attach day2-validate/validation-brief.md and day2-validate/data/sample-enquiries.csv with @ Files first)
-
-```
-Use the brief and the CSV. Rebuild the inbox with the real enquiries and a draft reply each, then add the partner check from the brief.
-```
-
-## Then paste this to fire the kill switch
+## Paste this
 
 ```
-Read day2-validate/data/partner-check-results.csv. Against the kill switch in day2-validate/validation-brief.md, does it fire?
+Read one-pager.md and day2-validate/build-log.md. Plan first. Then add my riskiest assumption: officers who see their own reopened enquiries will change how they reply, its risk type, a kill switch and a success signal to day2-validate/build-log.md, update day2-validate/prototype/ to test it using made-up sample data labelled as made up, and save both on main (open the pull request and merge it).
 ```
 
-The second prompt is added for the live run. In the video the result screen shows the same outcome.
-Optional, to match the slide's "real user quotes": also attach day2-validate/data/officer-quotes.md.
+This is the Scenario A wording. Claude should plan first, then write the assumption, make a made-up CSV, wire the dashboard to it, and merge on main.

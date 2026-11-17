@@ -13,6 +13,8 @@ No Terminal steps. The Claude desktop app and the browser are all you need.
 
 ## Day 2 · Validate
 
+Every Day 2 demo runs on one Scenario A thread: ServiceSG enquiry response, made-up data. Module 4 builds the officer dashboard. Module 5 aims it at an assumption, then adds a partner check. Module 6 opens that same dashboard and asks what is missing for production.
+
 ### C4 · The Triple-Threat Build · 4 min · `day2-validate/c4-triple-threat-build/`
 
 Slide: "The Triple-Threat Build" (Instructor-Led Demo, Scenario A). Also on video: `c4-triple-threat-build.mp4`.
@@ -24,35 +26,35 @@ Then: `Which of the three theories in GROUP.md does this dashboard test?`
 
 Lands on: it only built the loudest guess.
 
-### C5 · Demo · Context Injection · 5 min (agenda 4) · `day2-validate/c5-context-injection/`
+### C5 · Demo · Context Injection · 3 min · `day2-validate/c5-context-injection/`
 
-Slide: "Demo · Context Injection" (Instructor-Led Demo · 5 Minutes). Also on video: `c5-context-injection.mp4`. Attach `day2-validate/validation-brief.md` and `day2-validate/data/sample-enquiries.csv` first.
+Slide: "Demo · Context Injection" (Instructor-Led Demo). Also on video: `c5-context-injection.mp4`. Starts from the Module 4 officer dashboard, plus `one-pager.md` and `day2-validate/build-log.md`.
 ```
-Use the brief and the CSV. Rebuild the inbox with the real enquiries and a draft reply each, then add the partner check from the brief.
-```
-
-Then: `Read day2-validate/data/partner-check-results.csv. Against the kill switch in day2-validate/validation-brief.md, does it fire?`
-
-Lands on: 2 of 5 partners missed the urgent enquiry, so the kill switch fires.
-
-### C5 · Demo · The Precision Prompt Chain · 6 min (agenda 4) · `day2-validate/c5-precision-prompt-chain/`
-
-Slide: "Demo · The Precision Prompt Chain" (Instructor-Led Demo · 6 Minutes). Also on video: `c5-precision-prompt-chain.mp4`.
-```
-Prompt 1, Expand: add an enquiry detail view and a draft reply view, in that order. Keep the list as the anchor.
-```
-```
-Prompt 2, Behavior: add loading, empty and error states with the exact text in PROMPTS.md. Drafts are never sent automatically.
-```
-```
-Prompt 3, Refine: audit the list screen for its 3 biggest visual gaps. Then fix only the top two.
+Read one-pager.md and day2-validate/build-log.md. Plan first. Then add my riskiest assumption: officers who see their own reopened enquiries will change how they reply, its risk type, a kill switch and a success signal to day2-validate/build-log.md, update day2-validate/prototype/ to test it using made-up sample data labelled as made up, and save both on main (open the pull request and merge it).
 ```
 
-Lands on: 3 screens become 5, states added, the audit names the header, the disabled-looking button and the row spacing, and fixes two.
+Lands on: the same dashboard now tests an assumption, with a made-up CSV and one marked signal.
 
-### C6 · Exterior vs Hood · inside the 4 min slide · `day2-validate/c6-exterior-vs-hood/`
+### C5 · Demo · Your Prompt Chain · 3 min · `day2-validate/c5-precision-prompt-chain/`
 
-Slide: "Exterior vs hood" (Lecture; the live demo is in the speaker note, Scenario B).
+Slide: "Demo · Your Prompt Chain" (Instructor-Led Demo · 6 Minutes). Also on video: `c5-precision-prompt-chain.mp4`. Starts from the end of Context Injection.
+```
+Prompt 1, Expand: add a partner check view after the dashboard, in that order. Keep the dashboard as the anchor.
+```
+```
+Prompt 2, Behavior: after 30 seconds, ask "Which reply would you change?" Count partners who name one. Fewer than 3 of 5 fires the kill switch.
+```
+```
+Prompt 3, Refine: audit the partner check for its 2 biggest gaps. Fix only the top one.
+```
+
+Then: `Save the chain and its checks to PROMPTS.md, log toy or tool in build-log.md, and save both on main.`
+
+Lands on: a partner check on the same dashboard, answers counted against the kill switch, one scoped fix, prompts saved on main.
+
+### C6 · Demo vs code · inside the 8 min slide block · `day2-validate/c6-demo-vs-code/`
+
+Slide: "Demo vs code" (Lecture; the live demo is in the speaker note, Scenario A). In the Claude desktop app, Code tab, select `day2-validate/c6-demo-vs-code`.
 ```
 Open day2-validate/prototype/index.html. List what's missing before this could go to production: data handling, error paths, access rules, tests, and how the AI step is called.
 ```

@@ -1,12 +1,12 @@
 # Expected · C5 Context Injection (made up data)
 
 ## Lands on
-Before: the inbox says "Enquiry subject goes here", "Hypothesis goes here", "Add success criteria later". It tests nothing.
-After: 5 made-up enquiries in the list (E-2041 to E-2045), a draft reply on each, and a partner check screen asking "Which enquiry is urgent?".
-Partner results: 3 of 5 picked E-2041 (the fallen tree, the only urgent one). 2 of 5 missed it (E-2042 and E-2045).
-More than 1 of 5 missed, so the kill switch fires: redesign the list before building anything else.
+Before: the Module 4 officer dashboard looks finished. The numbers are hard-coded (128 open, 24% reopened). build-log.md only has the Module 4 entry. It tests nothing.
+After: Claude plans first, then adds the riskiest assumption to day2-validate/build-log.md: officers who see their own reopened enquiries will change how they reply. Risk type: market. Kill switch: if fewer than 3 of 5 partners name a reply they would change, stop and test the templates theory. Success signal: 4 of 5 partners name one reply to change after 30 seconds on the dashboard.
+It writes day2-validate/data/sample-officer-metrics.csv, labelled as made up: 6 rows, officer OFF-07, 72 closed and 21 reopened in 30 days (29% reopen rate, team 24%), top reason "missed next step" (16 of 21), with Payments at 9 reopens as the marked signal.
+The same dashboard is wired to that data. Both the build log and the prototype are merged on main.
 
-Line to say: same tool, same look. Now it proves something.
+Line to say: same dashboard, same look. Now it tests an assumption.
 
 ## Fallback
-If the rebuild is slow, skip to the second prompt. Claude can answer it from the CSV and the brief alone: 2 of 5 missed, the kill switch fires.
+If the rebuild is slow, open day2-validate/build-log.md and the CSV from the Files list and walk the room through the assumption, the kill switch and the Payments signal. Or play the C5 Context Injection video.

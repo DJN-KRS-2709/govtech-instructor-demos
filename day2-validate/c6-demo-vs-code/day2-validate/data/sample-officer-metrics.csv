@@ -1,0 +1,8 @@
+# Made up for a live demo. Synthetic data, no real people, no real records.
+officer,category,closed_30d,reopened,top_reason
+OFF-07,Parking,22,7,missed next step
+OFF-07,Permits,14,2,wrong form linked
+OFF-07,Drains,9,1,duplicate report
+OFF-07,Noise,11,2,outcome disputed
+OFF-07,Payments,16,9,missed next step
+TEAM,all,412,99,missed next step
